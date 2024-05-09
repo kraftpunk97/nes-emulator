@@ -33,3 +33,6 @@
 
 # Remove build directories
 *build*/
+
+
+.idea/

@@ -5,4 +5,5 @@
 #ifndef NES_EMULATOR_CPU_H
 #define NES_EMULATOR_CPU_H
 
+
 #endif //NES_EMULATOR_CPU_H

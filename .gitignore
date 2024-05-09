@@ -39,3 +39,6 @@
 
 # Remove the sandbox directory
 sandbox/*
+
+# Exclude the ROMs
+roms/*

@@ -11,7 +11,9 @@ find_package(Threads REQUIRED)
 include_directories("nes-emulator/"
         ${SDL2_INCLUDE_DIR})
 
-set(SOURCE_FILES ) # <---- Add files here
+set(SOURCE_FILES
+"nes-emulator/main.cpp"
+        nes-emulator/CPU/CPU.h) # <---- Add files here
 
 
 add_executable(nesemu ${SOURCE_FILES})

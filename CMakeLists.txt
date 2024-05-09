@@ -8,7 +8,7 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(SDL2 REQUIRED)
 find_package(Threads REQUIRED)
 
-include_directories("include/"
+include_directories("nes-emulator/"
         ${SDL2_INCLUDE_DIR})
 
 set(SOURCE_FILES ) # <---- Add files here

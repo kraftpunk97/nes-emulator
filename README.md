@@ -5,4 +5,5 @@ My very own emulator for the Nintendo Entertainment System
 - [ ] CPU
 - [ ] PPU
 - [ ] APU
-- [ ] Loading a ROM into memory (In progress)
+- [ ] Logging (WIP)
+- [ ] Cartridge (WIP)

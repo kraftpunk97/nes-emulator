@@ -12,8 +12,10 @@ include_directories("nes-emulator/"
         ${SDL2_INCLUDE_DIR})
 
 set(SOURCE_FILES
-"nes-emulator/main.cpp"
-        nes-emulator/CPU/CPU.h) # <---- Add files here
+        "nes-emulator/main.cpp"
+        nes-emulator/CPU/CPU.h
+        nes-emulator/Log/Log.cpp
+        nes-emulator/Log/Log.h) # <---- Add files here
 
 
 add_executable(nesemu ${SOURCE_FILES})

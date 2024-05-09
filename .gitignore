@@ -34,5 +34,8 @@
 # Remove build directories
 *build*/
 
-
+# Remove CLion configurations directory
 .idea/
+
+# Remove the sandbox directory
+sandbox/*

@@ -12,11 +12,16 @@ include_directories("nes-emulator/"
         ${SDL2_INCLUDE_DIR})
 
 set(SOURCE_FILES
-        "nes-emulator/main.cpp"
         nes-emulator/CPU/CPU.h
         nes-emulator/Log/Log.cpp
-        nes-emulator/Log/Log.h) # <---- Add files here
+        nes-emulator/Log/Log.h
+        nes-emulator/specs.h
+        nes-emulator/Cartridge/Cartridge.cpp
+        nes-emulator/Cartridge/Cartridge.h) # <---- Add files here
 
 
-add_executable(nesemu ${SOURCE_FILES})
+add_executable(nesemu ${SOURCE_FILES} nes-emulator/main.cpp)
 target_link_libraries(nesemu PRIVATE ${SDL2_LIBRARY} Threads::Threads)
+
+add_executable(sandbox ${SOURCE_FILES} nes-emulator/sandbox.cpp)
+target_link_libraries(sandbox PRIVATE ${SDL2_LIBRARY} Threads::Threads)

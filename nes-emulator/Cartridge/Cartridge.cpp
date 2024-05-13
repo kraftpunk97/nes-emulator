@@ -26,16 +26,47 @@ namespace nes {
         }
         LOG(InfoVerbose) << "Successfully loaded the header";
 
-        std::vector<std::byte> nes_ascii = { static_cast<std::byte>(0x4E), static_cast<std::byte>(0x45),
-                                                   static_cast<std::byte>(0x53), static_cast<std::byte>(0x1A)
-        }; // NES*EOF*
-        std::vector<std::byte> iNES_identifier(m_header.begin(), m_header.begin()+4);
+        std::vector<u_char> nes_ascii = {0x4E, 0x45, 0x53, 0x1A}; // NES*EOF*
+        std::vector<u_char> iNES_identifier(m_header.begin(), m_header.begin()+4);
         if (iNES_identifier != nes_ascii) {
             LOG(Error) << "This is not a valid NES ROM.\n";
             return;
         }
-        std::cout << "ROM is valid\n";
+        LOG(InfoVerbose) << "ROM is valid\n";
 
-        //
+        // Extract PRG ROM size
+        m_PRG_ROM.reserve(static_cast<size_t>(16*0x400*m_header[4]));
+        LOG(InfoVerbose) << 16*0x400*m_header[4] << " bytes reserved for PRG ROM\n";
+
+        // Extract CHR ROM size
+        m_CHR_ROM.reserve(static_cast<size_t>(8*0x400*m_header[5]));
+        LOG(InfoVerbose) << 8*0x400*m_header[5] << " bytes reserved for CHR ROM\n";
+
+        u_char flags6 = m_header[6];
+        bool nametable_arrangement = flags6 & 0x01;
+        m_is_PRG_RAM = (flags6&0x02)!=0;
+        m_is_trainer = (flags6&0x04)!=0;
+        m_alternative_nt_layout = (flags6&0x08)!=0;
+
+        u_char flags7 = m_header[7];
+        m_is_vs = flags7 & 0x01;
+        m_nes2_identifier = (flags7 & 0x0C) == 0x08;
+        m_mapper_num = (flags7&0xF0) | ((flags6&0xF0)>>4);
+
+        int PRG_RAM_size = 8*0x400*m_header[8];
+
+        if (not m_nes2_identifier and
+        m_header[12]==m_header[13]==m_header[14]==m_header[15]==0x0) {
+            printf("iNES\n");
+        } else if (m_nes2_identifier) {
+            printf("NES2.0\n");
+        }
+
+
+
+    }
+
+    void Cartridge::loadDummy(const std::string &filepath) { // TODO: Delete later
+        return;
     }
 }

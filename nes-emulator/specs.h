@@ -21,4 +21,7 @@
 // Cartridge
 #define HEADER_SIZE 0x10
 
+// typedefs
+#define u_char unsigned char
+
 #endif //NES_EMULATOR_SPECS_H

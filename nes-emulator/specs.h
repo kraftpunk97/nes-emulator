@@ -18,8 +18,11 @@
 #define PPU_COLOR_PALLETE_SIZE 0x1C
 
 
-// Cartridge
+// mapper
 #define HEADER_SIZE 0x10
+#define TRAINER_SIZE 512
+#define PRGROM_BLOCK_SIZE 16384
+#define CHRROM_BLOCK_SIZE 8192
 
 // typedefs
 #define u_char unsigned char

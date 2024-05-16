@@ -26,8 +26,8 @@ namespace nes {
   };
 
   class Log {
-      Level logLevel;
-      std::ostream *m_logStream;
+      Level LogLevel;
+      std::ostream *m_LogStream;
       std::ostream *m_cpuTrace;
   public:
       void setLogStream(std::ostream &stream);

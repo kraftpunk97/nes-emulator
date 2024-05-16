@@ -2,7 +2,7 @@
 // Created by kxg220013 on 5/9/2024.
 //
 
-#include "Log.h"
+#include "log.h"
 
 namespace nes {
     Log& Log::get() {
@@ -15,11 +15,11 @@ namespace nes {
     }
 
     std::ostream& Log::getStream() {
-        return *m_logStream;
+        return *m_LogStream;
     }
 
     void Log::setLogStream(std::ostream &stream) {
-        m_logStream = &stream;
+        m_LogStream = &stream;
     }
 
     void Log::setCPUTraceStream(std::ostream &stream) {
@@ -27,12 +27,12 @@ namespace nes {
     }
 
     Log& Log::setLevel(nes::Level level) {
-        logLevel = level;
+        LogLevel = level;
         return *this;
     }
 
     nes::Level Log::getLevel() {
-        return logLevel;
+        return LogLevel;
     }
 
     TeeBuf::TeeBuf(std::streambuf *sb1, std::streambuf *sb2) {

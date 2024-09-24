@@ -1,9 +1,6 @@
-//
-// Created by kxg220013 on 5/9/2024.
-//
-#include <iostream>
+#include "spdlog/spdlog.h"
 
-int main(int argc, char* args[]) {
-    std::cout << "Hello, world!\n";
+int main(int argc, char* argv[]) {
+    spdlog::info("main.cpp");
     return 0;
 }

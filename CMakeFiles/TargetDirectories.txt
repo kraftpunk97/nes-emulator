@@ -1,0 +1,7 @@
+/Users/kartikeygupta/Workspace/nes-emulator/CMakeFiles/nesemu.dir
+/Users/kartikeygupta/Workspace/nes-emulator/CMakeFiles/sandbox.dir
+/Users/kartikeygupta/Workspace/nes-emulator/CMakeFiles/edit_cache.dir
+/Users/kartikeygupta/Workspace/nes-emulator/CMakeFiles/rebuild_cache.dir
+/Users/kartikeygupta/Workspace/nes-emulator/external/spdlog/CMakeFiles/spdlog.dir
+/Users/kartikeygupta/Workspace/nes-emulator/external/spdlog/CMakeFiles/edit_cache.dir
+/Users/kartikeygupta/Workspace/nes-emulator/external/spdlog/CMakeFiles/rebuild_cache.dir

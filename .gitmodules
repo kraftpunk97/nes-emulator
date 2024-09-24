@@ -1,3 +1,9 @@
 [submodule "sdl2-cmake-scripts"]
 	path = sdl2-cmake-scripts
 	url = https://github.com/tcbrindle/sdl2-cmake-scripts
+[submodule "external/spdlog"]
+	path = external/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "external/sdl2-cmake-scripts"]
+	path = external/sdl2-cmake-scripts
+	url = https://github.com/tcbrindle/sdl2-cmake-scripts
